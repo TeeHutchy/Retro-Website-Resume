@@ -1,6 +1,5 @@
 import React from "react";
-import MacWindow from "./macWindow";
-import { title } from "process";
+import MacWindow from "./components/macWindow";
 
 const props = {
   title: "taylor was here",
