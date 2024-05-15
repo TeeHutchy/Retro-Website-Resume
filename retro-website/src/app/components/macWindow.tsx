@@ -1,10 +1,15 @@
 import React from 'react';
 import './macWindow.css';
 import AsciiName from './asciiArt';
+import { TypeAnimation } from 'react-type-animation';
+import AsciiBanner from '@/app/constants/banner';
+import { GREETING, BIO, DEV1, DEV2, DEV3, DEV4, DEV5, DEV6, DEV7, DEV9, DEVFINAL, LINKS } from '../constants/string';
+
+const banner = AsciiBanner;
 
 interface WindowProps {
-    title: string;
-    // Add other props if needed
+    greeting: string;
+    name: string;
 } 
 
 const MacWindow: React.FC<{ windowProps: WindowProps }> =  ({ windowProps }) => {
@@ -16,8 +21,30 @@ const MacWindow: React.FC<{ windowProps: WindowProps }> =  ({ windowProps }) => 
                 <div className="mac-maximize-button"></div>
             </div>
             <div className="mac-content">
+              <div>
                 <AsciiName />
-                {windowProps.title}
+              </div>
+            
+            <TypeAnimation 
+            speed={40} 
+            omitDeletionAnimation={true}
+            sequence={[ 
+                GREETING + "\n" + BIO, 500,
+                DEV2, 500,
+                DEV3, 500,
+                DEV4, 500,
+                DEV5, 500,
+                DEV6, 500,
+                DEV7, 500,
+                DEV9, 500,
+                DEVFINAL, 500,
+                DEVFINAL +  "\n" + LINKS , 500,
+                ]} 
+            style={{ 
+                fontSize: '1rem',
+                display: 'inline-block/block',
+                whiteSpace: "pre-line" }} />
+
             </div>
         </div>
     );
