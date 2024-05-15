@@ -1,0 +1,49 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+} */
+
+.mac-window {
+    width: 80%;
+    max-width: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: center;
+}
+
+.mac-title-bar {
+    height: 40px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.mac-title-bar .mac-close-button,
+.mac-title-bar .mac-minimize-button,
+.mac-title-bar .mac-maximize-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.mac-title-bar .mac-close-button {
+    background-color: #fc625d;
+}
+
+.mac-title-bar .mac-minimize-button {
+    background-color: #fdbc40;
+}
+
+.mac-title-bar .mac-maximize-button {
+    background-color: #34c749;
+}
+
+.mac-content {
+    padding: 20px;
+}
