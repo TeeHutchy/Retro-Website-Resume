@@ -18,11 +18,14 @@ animation: blink 1s infinite;
 .type-writer > span{
 }
 
+html, body, #root, .container {
+   display: grid;
+   place-items: center;
+   width: 100%;
+ }
+
+
 
 .windowPositioning {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-width: 800px;
 }

@@ -9,17 +9,14 @@ import { TypeAnimation } from "react-type-animation";
 const props = {
   greeting: GREETING,
   name: BIO
-
-
-// Adding info here
 }
 
 export default function Home() {
   return (
-    <main> 
+    <div className="container"> 
       <div className="windowPositioning">
           <MacWindow windowProps={props}/>
       </div>
-    </main>
+    </div>
   );
 }
