@@ -4,7 +4,7 @@ import AsciiName from './asciiArt';
 import { TypeAnimation } from 'react-type-animation';
 import AsciiBanner from '@/app/constants/banner';
 import { GREETING, BIO, DEV1, DEV2, DEV3, DEV4, DEV5, DEV6, DEV7, DEV9, DEVFINAL, LINKS } from '../constants/string';
-const pdf = 'public/TaylorDouglasHutchensResume2024.pdf';
+const pdf = '/TaylorDouglasHutchensResume2024.pdf';
 const banner = AsciiBanner;
 
 interface WindowProps {

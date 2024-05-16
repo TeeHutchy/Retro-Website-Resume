@@ -22,6 +22,7 @@ html, body, #root, .container {
    display: grid;
    place-items: center;
    width: 100%;
+   padding-top: 2%;
  }
 
 
