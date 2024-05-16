@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './macWindow.css';
 import AsciiName from './asciiArt';
 import { TypeAnimation } from 'react-type-animation';
-import AsciiBanner from '@/app/constants/banner';
 import { GREETING, BIO, DEV1, DEV2, DEV3, DEV4, DEV5, DEV6, DEV7, DEV9, DEVFINAL, LINKS } from '../constants/string';
+import Modal from './Modal';
+import LinkedInSvg from './LinkedIn';
+import GitHubSvg from './GitHub';
 const pdf = '/TaylorDouglasHutchensResume2024.pdf';
-const banner = AsciiBanner;
 
 interface WindowProps {
     greeting: string;
     name: string;
 } 
 
-const GithubIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-</svg>
-)
-
+const PdfIcon = ({ onClick }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-filetype-pdf" viewBox="0 0 16 16" onClick={onClick} style={{ fontSize: '2rem', cursor: 'pointer' }}>
+    <path fillRule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+  </svg>
+);
 
 const MacWindow: React.FC<{ windowProps: WindowProps }> =  ({ windowProps }) => {
+    const [showModal, setShowModal] = useState(false);
+    const [openLinkedIn] = useState(false);
+
+    const handleOpenModal = () => {
+      setShowModal(true);
+    };
+    
+    const handleCloseModal = () => {
+      setShowModal(false);
+    };
+
     return (
         <div className="mac-window">
             <div className="mac-title-bar">
@@ -29,35 +40,50 @@ const MacWindow: React.FC<{ windowProps: WindowProps }> =  ({ windowProps }) => 
             </div>
             <div className="mac-content">
 
-              <div>
-                <AsciiName />
-              </div>
+                <div className='asciiArtName'>
+                    <AsciiName />
+                </div>
             
-            <TypeAnimation 
-            speed={40} 
-            omitDeletionAnimation={true}
-            sequence={[ 
-                GREETING + "\n" + BIO, 500,
-                DEV2, 500,
-                DEV3, 500,
-                DEV4, 500,
-                DEV5, 500,
-                DEV6, 500,
-                DEV7, 500,
-                DEV9, 500,
-                DEVFINAL, 500,
-                DEVFINAL +  "\n" + LINKS , 500,
-                ]} 
-            style={{ 
-                fontSize: '1rem',
-                display: 'inline-block/block',
-                whiteSpace: "pre-line" }} />
+                <TypeAnimation 
+                speed={40} 
+                omitDeletionAnimation={true}
+                sequence={[ 
+                    GREETING + "\n" + BIO, 500,
+                    DEV2, 500,
+                    DEV3, 500,
+                    DEV4, 500,
+                    DEV5, 500,
+                    DEV6, 500,
+                    DEV7, 500,
+                    DEV9, 500,
+                    DEVFINAL, 500,
+                    DEVFINAL +  "\n" + LINKS , 500,
+                    ]} 
+                style={{ 
+                    fontSize: '1rem',
+                    display: 'inline-block/block',
+                    whiteSpace: "pre-line" }} />
 
 
+
+                <div className='footer'>
+                    <PdfIcon onClick={handleOpenModal} />
+                    <LinkedInSvg />
+                    <GitHubSvg />
+
+          
+                    <Modal show={showModal} handleClose={handleCloseModal}>
+                    <h2>Resume</h2>
+                        <embed
+                            style={{
+                                width: '100%',
+                                height: '100vh',
+                            }}
+                            type='application/pdf'
+                            src={pdf} />
+                    </Modal>
+                </div>
             </div>
-
-<GithubIcon></GithubIcon>
-
         </div>
     );
 };

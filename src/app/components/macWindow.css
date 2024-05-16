@@ -40,3 +40,15 @@
 .mac-content {
     padding: 20px;
 }
+
+.asciiArtName {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+.footer {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
