@@ -2,7 +2,7 @@ import React from 'react';
 
 const AsciiName = () => {
     return (
-        <pre>
+        <pre style={{fontSize: '1rem'}}>
             {'  _______          _              _    _       _       _                    \n'}
             {' |__   __|        | |            | |  | |     | |     | |                   \n'}
             {'    | | __ _ _   _| | ___  _ __  | |__| |_   _| |_ ___| |__   ___ _ __  ___ \n'}
