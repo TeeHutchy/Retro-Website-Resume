@@ -8,6 +8,7 @@ import LinkedInSvg from './LinkedIn';
 import GitHubSvg from './GitHub';
 import EmailIcon from './GmailMe';
 import PdfIcon from './PdfIcon';
+import AsciiBanner from '../constants/banner';
 const pdf = '/TaylorDouglasHutchensResume2024.pdf';
 
 interface WindowProps {
@@ -37,7 +38,9 @@ const MacWindow: React.FC<{ windowProps: WindowProps }> =  ({ windowProps }) => 
             <div className="mac-content">
 
                 <div className='asciiArtName'>
+                    <AsciiBanner />
                     <AsciiName />
+                    <AsciiBanner />
                 </div>
             
                 <TypeAnimation 
