@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import './macWindow.css';
 import AsciiName from './asciiArt';
-import { TypeAnimation } from 'react-type-animation';
-import { GREETING, BIO, DEV1, DEV2, DEV3, DEV4, DEV5, DEV6, DEV7, DEV9, DEVFINAL, LINKS } from '../constants/string';
 import Modal from './Modal';
 import LinkedInSvg from './LinkedIn';
 import GitHubSvg from './GitHub';
 import EmailIcon from './GmailMe';
 import PdfIcon from './PdfIcon';
 import AsciiBanner from '../constants/banner';
+import TypingBio from './TypingText';
 const pdf = '/TaylorDouglasHutchensResume2024.pdf';
 
 interface WindowProps {
@@ -42,26 +41,12 @@ const MacWindow: React.FC<{ windowProps: WindowProps }> =  ({ windowProps }) => 
                     <AsciiName />
                     <AsciiBanner />
                 </div>
-            
-                <TypeAnimation 
-                speed={40} 
-                omitDeletionAnimation={true}
-                sequence={[ 
-                    GREETING + "\n" + BIO, 500,
-                    DEV2, 500,
-                    DEV3, 500,
-                    DEV4, 500,
-                    DEV5, 500,
-                    DEV6, 500,
-                    DEV7, 500,
-                    DEV9, 500,
-                    DEVFINAL, 500,
-                    DEVFINAL +  "\n" + LINKS , 500,
-                    ]} 
-                style={{ 
-                    fontSize: '1rem',
-                    display: 'inline-block/block',
-                    whiteSpace: "pre-line" }} />
+
+                <div className='typingBio'>
+                    <TypingBio />
+                </div>
+                
+
 
                 <div className='footer'>
                     <PdfIcon onClick={handleOpenModal}/>
