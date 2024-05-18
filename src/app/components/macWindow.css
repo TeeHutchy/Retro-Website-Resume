@@ -5,6 +5,10 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border: center;
+    min-width: 15vh;
+    min-height: 50vh;
+    max-width: 50rem;
+
 }
 
 .mac-title-bar {
@@ -38,17 +42,24 @@
 }
 
 .mac-content {
-    padding: 20px;
+    padding-top: 1.25rem;
+    min-width: 50rem;
+    min-height: 38.438rem;
 }
 
 .asciiArtName {
     display: grid;
     place-items: center;
-    width: 100%;
+}
+
+.typingBio {
+    padding: 1.25rem;
+    display: grid;
+    height: 280px;
 }
 
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
